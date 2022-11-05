@@ -14,7 +14,6 @@ const EditModal = ({closeModal, data}) => {
   return (
     <div
       id="authentication-modal"
-      tabindex="-1"
       aria-hidden="true"
       className="overflow-y-auto  overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"
     >
@@ -46,7 +45,7 @@ const EditModal = ({closeModal, data}) => {
             <form className="space-y-6" action="#">
             <div>
                 <label
-                  for="email"
+                  htmlFor="email"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                 >
                   Name
@@ -63,7 +62,7 @@ const EditModal = ({closeModal, data}) => {
               </div>
               <div>
                 <label
-                  for="email"
+                  htmlFor="email"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                 >
                   Email
@@ -80,7 +79,7 @@ const EditModal = ({closeModal, data}) => {
               </div>
               <div>
                 <label
-                  for="password"
+                  htmlFor="password"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                 >
                   Role
