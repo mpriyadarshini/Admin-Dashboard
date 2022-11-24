@@ -1,16 +1,22 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { User } from "../client";
 
-const EditModal = ({closeModal, data}) => {
-    console.log(data);
-    const [editName, setEditName] = useState(data.name);
-    const [editRole, setEditRole] = useState(data.role);
-    const [editEmail, setEditEmail] = useState(data.email);
-    const editData = () => {
-        data.name = editName;
-        data.email = editEmail;
-        data.role = editRole;
-        closeModal();
-    }
+type EditModalProps = {
+  data: User;
+  closeModal: () => void;
+}
+
+const EditModal = ({ closeModal, data }: EditModalProps) => {
+  console.log(data);
+  const [editName, setEditName] = useState(data.name);
+  const [editRole, setEditRole] = useState(data.role);
+  const [editEmail, setEditEmail] = useState(data.email);
+  const editData = () => {
+    data.name = editName;
+    data.email = editEmail;
+    data.role = editRole;
+    closeModal();
+  }
   return (
     <div
       id="authentication-modal"
@@ -41,9 +47,9 @@ const EditModal = ({closeModal, data}) => {
             <span className="sr-only">Close modal</span>
           </button>
           <div className="py-6 px-6 lg:px-8">
-            
+
             <form className="space-y-6" action="#">
-            <div>
+              <div>
                 <label
                   htmlFor="email"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -94,7 +100,7 @@ const EditModal = ({closeModal, data}) => {
                   onChange={(e) => setEditRole(e.target.value)}
                 />
               </div>
-              
+
               <button
                 type="submit"
                 className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -102,7 +108,7 @@ const EditModal = ({closeModal, data}) => {
               >
                 Edit
               </button>
-              
+
             </form>
           </div>
         </div>
